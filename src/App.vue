@@ -1,63 +1,82 @@
 <template>
-  <div class="min-h-screen flex bg-slate-50">
+  <div class="min-h-screen flex bg-gradient-to-br from-slate-100 to-slate-200 text-slate-800 font-inter">
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-slate-200 p-4 hidden md:block">
-      <div class="text-2xl font-bold mb-8">Dashboard</div>
-      <nav class="space-y-2">
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100">Overview</a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100">Users</a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100">Reports</a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100">Settings</a>
-      </nav>
+    <aside class="w-72 bg-white/80 backdrop-blur-xl border-r border-slate-200 p-6 hidden md:flex flex-col justify-between shadow-sm">
+      <div>
+        <div class="text-3xl font-extrabold mb-10 bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+          Dashboard
+        </div>
+        <nav class="space-y-2">
+          <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 transition">
+            <span class="text-lg">🏠</span> <span>Overview</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 transition">
+            <span class="text-lg">👥</span> <span>Users</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 transition">
+            <span class="text-lg">📊</span> <span>Reports</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-50 transition">
+            <span class="text-lg">⚙️</span> <span>Settings</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="border-t border-slate-200 pt-4 text-sm text-slate-500">
+        © 2025 Sonnara Admin
+      </div>
     </aside>
 
     <!-- Main content -->
-    <div class="flex-1 flex flex-col">
+    <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Topbar -->
-      <header class="bg-white border-b border-slate-200 flex justify-between items-center p-4">
-        <h1 class="text-xl font-semibold">Dashboard Overview</h1>
-        <div class="flex items-center gap-4">
-          <button class="p-2 rounded-md hover:bg-slate-100">🔔</button>
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full bg-slate-300"></div>
+      <header class="bg-white/70 backdrop-blur-lg border-b border-slate-200 flex justify-between items-center px-8 py-5 shadow-sm">
+        <h1 class="text-2xl font-semibold">Dashboard Overview</h1>
+        <div class="flex items-center gap-6">
+          <button class="p-3 rounded-full hover:bg-slate-100 transition text-xl">🔔</button>
+          <div class="flex items-center gap-3">
+            <img src="https://i.pravatar.cc/100" alt="avatar" class="w-10 h-10 rounded-full border border-slate-300" />
             <div>
-              <p class="text-sm font-medium">Phat Oudompanha</p>
-              <p class="text-xs text-slate-400">Admin</p>
+              <p class="font-medium">Sonnara</p>
+              <p class="text-sm text-slate-400">Admin</p>
             </div>
           </div>
         </div>
       </header>
 
-      <!-- Stats Cards -->
-      <main class="p-6 flex-1 overflow-y-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
-            <h3 class="text-sm text-slate-500">Total Users</h3>
-            <p class="text-3xl font-bold mt-2">1,254</p>
-            <p class="text-xs text-green-600">↑ 8% from last week</p>
+      <!-- Content -->
+      <main class="p-8 flex-1 overflow-y-auto space-y-10">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition">
+            <h3 class="text-slate-500 text-sm">Total Users</h3>
+            <p class="text-4xl font-bold mt-3">1,254</p>
+            <p class="text-green-600 text-sm mt-1">↑ 8% from last week</p>
           </div>
-          <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
-            <h3 class="text-sm text-slate-500">Revenue</h3>
-            <p class="text-3xl font-bold mt-2">$12,340</p>
-            <p class="text-xs text-green-600">↑ 2% this month</p>
+          <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition">
+            <h3 class="text-slate-500 text-sm">Revenue</h3>
+            <p class="text-4xl font-bold mt-3">$12,340</p>
+            <p class="text-green-600 text-sm mt-1">↑ 2% this month</p>
           </div>
-          <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
-            <h3 class="text-sm text-slate-500">Performance</h3>
-            <p class="text-3xl font-bold mt-2">98.7%</p>
-            <p class="text-xs text-slate-400">Stable</p>
+          <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition">
+            <h3 class="text-slate-500 text-sm">Performance</h3>
+            <p class="text-4xl font-bold mt-3">98.7%</p>
+            <p class="text-slate-500 text-sm mt-1">Stable</p>
           </div>
         </div>
 
-        <!-- Charts Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100 lg:col-span-2">
-            <h2 class="text-lg font-semibold mb-4">Activity Chart</h2>
-            <div class="h-64 flex items-center justify-center text-slate-400 border border-dashed rounded-lg">(Chart Placeholder)</div>
+        <!-- Chart + Notifications -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition lg:col-span-2">
+            <h2 class="text-xl font-semibold mb-5">Activity Chart</h2>
+            <div class="h-80 flex items-center justify-center text-slate-400 border border-dashed rounded-xl">
+              (Chart Placeholder)
+            </div>
           </div>
 
-          <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
-            <h2 class="text-lg font-semibold mb-4">Notifications</h2>
-            <ul class="space-y-3 text-sm text-slate-600">
+          <div class="bg-white/80 backdrop-blur-lg p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition">
+            <h2 class="text-xl font-semibold mb-5">Notifications</h2>
+            <ul class="space-y-3 text-slate-600 text-base">
               <li>• New user registered</li>
               <li>• Order #4321 completed</li>
               <li>• Server load normal</li>
@@ -65,25 +84,18 @@
           </div>
         </div>
 
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga sit beatae sequi dolores animi eveniet atque laudantium exercitationem at magnam libero non eum aut sed, explicabo laboriosam placeat facilis architecto!</p>
+        <p class="text-base leading-relaxed text-slate-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sit beatae sequi dolores animi eveniet atque laudantium exercitationem
+          at magnam libero non eum aut sed, explicabo laboriosam placeat facilis architecto!
+        </p>
       </main>
-
-      <!-- Footer -->
-      <footer class="p-4 text-center text-sm text-slate-500 border-t border-slate-200 bg-white">
-        © 2025 Sonnara
-        
-        Dashboard. All rights reserved.
-      </footer>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Dashboard'
-
-
-  
+  name: 'Dashboard',
 }
 </script>
 
